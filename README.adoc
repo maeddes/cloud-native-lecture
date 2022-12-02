@@ -1,0 +1,150 @@
+= Overview
+
+:toc:
+
+[cloud-intro]
+
+== Module: Cloud Introduction (theory-block I)
+
+* What is Cloud Computing? Encounters in everyday life and history
+* Characteristic, advantages & challenges
+* Terminology - public, private, hybrid, dedicated
+* Abstraction layers - IaaS, PaaS, FaaS, SaaS
+* Overview - Hypervisors, virtual machines, containers and orchestration
+* Overview - Global cloud service providers (CSPs), technologies and corresponding offerings
+
+=== Objectives and exercises 
+_The student is able to describe cloud computing in own words and list examples for offerings, topologies and technologies. Includes ability to differentiate between different abstraction layers and knowledge how those layers and according technologies interact with each other. No exercises in this module (//TODO: "Cloud readiness validation, setup dev env")_
+
+== Module: Spring Boot Introduction
+
+* Background: Spring Framework - History & components
+* Spring <- -> Spring Boot
+* Spring Initializr (start.spring.io) & starter dependencies
+* Basic project structure (folders, configuration ..)
+* "Hello, World!" example explained
+* Basic logging and testing
+* Using Actuator
+
+=== Objectives and exercises
+_The student is able to build and configure an own Spring Boot application from scratch with the IDE of choice. The exercise is to build an own "Hello, World!" application that exposes various REST endpoints and is able to execute CRUD operations on the state of the application. Optional: Add logging and testing, configure Actuator._
+
+== Module: Containers
+
+* What are containers and how do they work
+* Containers vs. VMs 
+* History of containers and rise of Docker
+* Docker concepts: daemon, hub, dockerfile, CLI
+* Multi-container handling with docker-compose
+* Limitations and problems with containers
+
+=== Objectives and exercises
+_The student understands the concepts and use cases of container technology and is able to describe them. The first exercise is to pull sample images from an image registry (e.g. Docker Hub) and interact with them (run, expose port, execute shell, cleanup etc). After that the student can show how to build a custom image via Dockerfile and push it to a registry for others to access. Optional: Take the sample application from module "Spring Boot Intro", put it into a container image and run it._
+
+== Module: Persistence
+
+* Spring Data
+* Concept of entities and repositories
+* JPA and JDBC basics
+* H2, PostgeSQL, MySQL - configuration via Spring Boot
+* Running databases as Docker images
+* //TODO, Spring Data JDBC, SQL and noSQL examples
+
+=== Objectives and exercises
+_The student is able to build a Spring Boot application (or extend an existing one) with Spring Data configuration. The exercise is to create an application, which performs CRUD operations on a database backend. The database can either be in-memory (H2) or a (containerized) PostgreSQL. Optional: Provide a docker-compose file to stand up a multi-container environment with application and database._
+
+== Module: Configuration & Profiles
+
+* Spring profiles
+* Various possibilities of external configuration in Spring (Boot)
+* Order of configuration options
+* //TODO move config server over here from Spring Cloud Services
+
+=== Objectives and exercises
+_The student is able to build a Spring Boot application with various configuration profiles and knows how to set the desired one at runtime. The exercise is to extend the existing persistence application and provide different persistence backend for different purposes, e.g. set an in-memory database for development and test purposes and a containerized one for production._
+
+== Module: Communication & Messaging
+
+* Asynchronous and synchronous communication
+* Queues and topics, PTP and Pub-Sub
+* Synchronous communication with RestTemplate and Feign
+* Smart endpoints and dumb pipes vs. ESB
+* Asynchronous communication examples in Spring Boot with Redis, RabbitMQ and Apache Kafka
+* Spring Cloud Stream
+
+=== Objectives and exercises
+_The student understands the differences between asynchronous and synchronous communication in distributed systems and can explain it in own words. The exercise is to implement asynchronous communication between two systems using either RabbitMQ, Redis or Kafka._
+
+== Module: Cloud-native software development & Microservices (theory-block II)
+
+* CAP Theorem
+* Conway's Law
+* Fallacies of distributed computing
+* Domain-Driven Design basics
+* 12-factor application
+* Evolution of applications and deployments: Monolithic -> Service-Oriented Architecture -> Microservices
+* Introduction to serverless and FaaS terminology
+
+=== Objectives and exercises
+_The student knows about the evolution of distributed systems and the drivers towards state-of-the-art implementation and deployment. She/he can explain the underlying concepts and theories and put it into practical context. No dedicated exercises for this module. Recap of basics: Spring Boot, Docker, configuration, persistence and messaging._
+
+== Module: Spring Cloud Services
+
+* Service Discovery with Eureka
+* Usage of Ribbon and Feign
+* External configuration with Spring Config server
+* Resilience with Hystrix
+* //TODO: API Gateways with Zuul
+
+=== Objectives and exercises
+_The student is able to use Spring Cloud Services and use them in the context of a distributed application. The exercise includes registering a service at Eureka as well as discovery and usage with help of Ribbon and Feign technologies, changing the configuration of a service during runtime with config server as well as using Hystrix on a failing call._
+
+== Module: Cloud Foundry
+
+* Introduction. Concept of PaaS and Cloud Foundry
+* Applications & Services
+* Buildpacks
+* CF CLI
+* Quotas, Domains, Orgs & Spaces
+* Providers
+
+=== Objectives and exercises
+_The student is able to explain the concept and behaviour of Cloud Foundry, use the CLI to deploy applications and bind services. The exercise is to deploy a previously build application, bind it to a database backend and perform typical cloud operations like scaling, auto-recovery, zero-downtime patching etc._
+
+== Module: Kubernetes
+
+* Overview of Kubernetes setup and architecture.
+* Understanding of Kubernetes base artifacts: Pods, ReplicaSets, Deployments & Services
+* Workflow to containerize an application and deploy it to a Kubernetes cluster
+* Kubernetes behaviour
+
+=== Objectives and exercises
+_The student is able to explain the concept and behaviour of Kubernetes, use the CLI to deploy containers and expose them via services. The exercise is to deploy a previously build application, bind it to a database backend and perform typical cloud operations like scaling, auto-recovery, zero-downtime patching etc._
+
+== Module: Resilience
+
+* Why resilience in distributed environments?
+* Patterns: Timeouts, Redundancy, Back Pressure, Bulk Heads, Circuit Breaker
+* Implementation of those patterns across various levels: Application, Container, Platform, Network
+
+=== Objectives and exercises
+_The student is able to explain the need for resilience patterns in distributed systems. The exercise is to implement various options across the various abstraction layers of a distributed application environment._
+
+== Module: Security
+
+* Spring Security
+* Cloud Foundry Security
+* Kubernetes Security
+* Hashicorp Vault
+
+= Backlog
+
+== Module: UI (various frameworks, REST interaction)
+== Module: Serverless (Knative, Spring Cloud Functions)
+== Module: CI/CD (Jenkins(X), Concourse, Spinnaker)
+== Module: Service Mesh (Istio, Envoy, Linkerd...)
+== Module: Observability and Monitoring
+
+
+
+
